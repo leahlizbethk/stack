@@ -1,0 +1,68 @@
+#include <stdio.h>
+#define MAX 4
+int a[MAX],top=-1;
+void push();
+void pop();
+void display();
+void main()
+{
+    int n,x,m;
+  
+    do{
+    printf("STACK MENU:\n");
+    printf("1.PUSHING OF ELEMENTS\n");
+    printf("2.POPPING OF ELEMENTS\n");
+    printf("3.DISPLAY ELEMENTS\n");
+    printf("4.EXIT\n");
+    printf("ENTER YOUR OPTION NO.:\n");
+    scanf("%d",&x);
+    
+    switch(x)
+    {
+        case 1:
+        push();
+        break;
+        case 2:
+        if(top==-1)
+        printf("THE STACK IS EMPTY");
+        else
+        pop();
+        break;
+        case 3:
+        if(top==-1)
+        printf("THE STACK IS EMPTY");
+        else
+        printf("THE ELEMENTS IN THE STACK ARE:\n");
+        display();
+    }
+    }while(x<=3);
+    printf("\nOVER\n");
+}
+    void push()
+    {
+        int v;
+        if(top==MAX-1)
+       { printf("THE STACK IS FULL\n");
+        printf("\n");}
+        else
+        {printf("ENTER THE ELEMENT TO BE PUSHED:\n");
+        scanf("%d",&v);
+        top++;
+        a[top]=v;}
+    }
+    void pop()
+    {
+        
+        printf("THE ELEMENT THAT WAS POPPED IS: %d\n",a[top]);
+        top--;
+    }
+    
+    void display()
+    {
+        int i;
+        for(i=top;i>=0;i--)
+        {
+            printf("%d\t\n",a[i]);
+        }
+    }
+
